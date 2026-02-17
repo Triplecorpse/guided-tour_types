@@ -1,0 +1,33 @@
+{
+  "name": "guided-tour_types",
+  "version": "0.1.0",
+  "description": "Shared DTOs and types for guided-tour",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "geojson": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "typescript": "^5.5.3"
+  },
+  "keywords": [
+    "nestjs",
+    "angular",
+    "types",
+    "dto"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "private": true
+}
