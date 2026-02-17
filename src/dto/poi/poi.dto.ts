@@ -5,11 +5,36 @@ import {
   IsOptional,
   IsString,
   ValidateNested,
+  registerDecorator,
+  ValidationOptions,
 } from "class-validator";
 import { Type } from "class-transformer";
 import { TranslationDto } from "../translation/translation.dto";
 import { ResourceDto } from "../resource/resource.dto";
 import { CollectionDto } from "../collection/collection.dto";
+import {Point} from "geojson";
+
+export function IsPoint(validationOptions?: ValidationOptions) {
+  return function (object: Object, propertyName: string) {
+    registerDecorator({
+      name: "isPoint",
+      target: object.constructor,
+      propertyName,
+      options: validationOptions,
+      validator: {
+        validate(value: any) {
+          return (
+            value &&
+            value.type === "Point" &&
+            Array.isArray(value.coordinates) &&
+            value.coordinates.length === 2 &&
+            value.coordinates.every((v: any) => typeof v === "number")
+          );
+        },
+      },
+    });
+  };
+}
 
 export class PoiDto {
   @IsNumber()
@@ -23,6 +48,10 @@ export class PoiDto {
   @IsOptional()
   @IsNumber()
   readonly latitude?: number;
+
+  @IsOptional()
+  @IsPoint()
+  readonly geom?: Point;
 
   @IsOptional()
   @IsNumber()
@@ -68,4 +97,3 @@ export class PoiDto {
   @IsOptional()
   updatedAt?: string;
 }
-
