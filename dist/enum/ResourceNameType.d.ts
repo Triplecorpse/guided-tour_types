@@ -1,0 +1,4 @@
+export declare enum ResourceNameType {
+    DEFAULT_FAVOURITE_RESOURCE = "DEFAULT_FAVOURITE",
+    DEFAULT_RESOURCE = "DEFAULT"
+}
