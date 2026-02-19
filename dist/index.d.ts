@@ -13,3 +13,4 @@ export { UserDto } from "./dto/profile/user.dto";
 export { DeleteUserRequestDto } from "./dto/profile/delete-user-request.dto";
 export { ResourceDto } from "./dto/resource/resource.dto";
 export { TranslationDto } from "./dto/translation/translation.dto";
+export { PermissionType } from "./enum/PermissionType";

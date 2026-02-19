@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TranslationDto = exports.ResourceDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsMultiPolygonConstraint = exports.IsMultiPolygon = exports.LocationDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
+exports.PermissionType = exports.TranslationDto = exports.ResourceDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsMultiPolygonConstraint = exports.IsMultiPolygon = exports.LocationDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
 // App Settings DTOs
 var app_setting_dto_1 = require("./dto/app-settings/app-setting.dto");
 Object.defineProperty(exports, "AppSettingDto", { enumerable: true, get: function () { return app_setting_dto_1.AppSettingDto; } });
@@ -44,3 +44,5 @@ Object.defineProperty(exports, "ResourceDto", { enumerable: true, get: function 
 // Translation DTOs
 var translation_dto_1 = require("./dto/translation/translation.dto");
 Object.defineProperty(exports, "TranslationDto", { enumerable: true, get: function () { return translation_dto_1.TranslationDto; } });
+var PermissionType_1 = require("./enum/PermissionType");
+Object.defineProperty(exports, "PermissionType", { enumerable: true, get: function () { return PermissionType_1.PermissionType; } });

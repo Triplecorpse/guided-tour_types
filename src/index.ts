@@ -36,3 +36,10 @@ export { ResourceDto } from "./dto/resource/resource.dto";
 
 // Translation DTOs
 export { TranslationDto } from "./dto/translation/translation.dto";
+
+export { PermissionType } from "./enum/PermissionType";
+export { AppSettingsType } from "./enum/AppSettingsType";
+export { ResourceNameType } from "./enum/ResourceNameType";
+export { PaymentEventType } from "./enum/PaymentEventType";
+export { ProfileEventType } from "./enum/ProfileEventType";
+export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType";
