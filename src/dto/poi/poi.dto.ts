@@ -22,7 +22,7 @@ export function IsPoint(validationOptions?: ValidationOptions) {
       propertyName,
       options: validationOptions,
       validator: {
-        validate(value: any) {
+        validate(value: Point) {
           if (!value) {
             return false;
           }
