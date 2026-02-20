@@ -25,11 +25,23 @@ function IsPoint(validationOptions) {
             options: validationOptions,
             validator: {
                 validate(value) {
-                    return (value &&
-                        value.type === "Point" &&
-                        Array.isArray(value.coordinates) &&
-                        value.coordinates.length === 2 &&
-                        value.coordinates.every((v) => typeof v === "number"));
+                    if (!value) {
+                        return false;
+                    }
+                    if (value.type !== "Point") {
+                        return false;
+                    }
+                    if (!Array.isArray(value.coordinates)) {
+                        return false;
+                    }
+                    // Support both 2D points [longitude, latitude] and 3D points [longitude, latitude, elevation]
+                    if (value.coordinates.length !== 2 && value.coordinates.length !== 3) {
+                        return false;
+                    }
+                    return value.coordinates.every((v) => typeof v === "number" && !isNaN(v));
+                },
+                defaultMessage() {
+                    return "geom must be a valid GeoJSON Point with coordinates array of 2 (longitude, latitude) or 3 (longitude, latitude, elevation) numeric values";
                 },
             },
         });
