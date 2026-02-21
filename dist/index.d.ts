@@ -19,3 +19,4 @@ export { ResourceNameType } from "./enum/ResourceNameType";
 export { PaymentEventType } from "./enum/PaymentEventType";
 export { ProfileEventType } from "./enum/ProfileEventType";
 export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType";
+export { Filter, FilterValue } from "./generic/Filter";
