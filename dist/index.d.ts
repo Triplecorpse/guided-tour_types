@@ -4,7 +4,7 @@ export { CheckoutInputDto } from "./dto/checkout/checkout-input.dto";
 export { CollectionDto } from "./dto/collection/collection.dto";
 export { PaginationQueryDto } from "./dto/common/pagination-query.dto";
 export { RefreshTokenDto } from "./dto/iam/refresh-token.dto";
-export { LocationDto, IsMultiPolygon, IsMultiPolygonConstraint, } from "./dto/location/location.dto";
+export { LocationDto, IsPolygon, IsPolygonConstraint, } from "./dto/location/location.dto";
 export { PriceDto } from "./dto/location/price.dto";
 export { VerifySessionInputDto } from "./dto/location/verify-session-input.dto";
 export { PoiDto } from "./dto/poi/poi.dto";

@@ -16,33 +16,24 @@ import { Type } from "class-transformer";
 import { TranslationDto } from "../translation/translation.dto";
 import { ResourceDto } from "../resource/resource.dto";
 import { PriceDto } from "./price.dto";
-import { MultiPolygon } from "geojson";
+import {MultiPolygon, Polygon} from "geojson";
 import { PoiDto } from "../poi/poi.dto";
 
-// Custom constraint for validating GeoJSON MultiPolygon
-@ValidatorConstraint({ name: "isValidMultiPolygon", async: false })
-export class IsMultiPolygonConstraint implements ValidatorConstraintInterface {
-  validate(geom: MultiPolygon, args: ValidationArguments): boolean {
+// Custom constraint for validating GeoJSON Polygon
+@ValidatorConstraint({ name: "isValidPolygon", async: false })
+export class IsPolygonConstraint implements ValidatorConstraintInterface {
+  validate(geom: Polygon, args: ValidationArguments): boolean {
     if (!geom || typeof geom !== "object") return false;
 
-    // Check if it's a MultiPolygon
-    if (geom.type !== "MultiPolygon") return false;
+    // Check if it's a Polygon
+    if (geom.type !== "Polygon") return false;
 
-    // Validate coordinates structure for MultiPolygon
-    return this.isValidMultiPolygonCoordinates(geom.coordinates);
+    // Validate coordinates structure for Polygon
+    return this.isValidPolygonCoordinates(geom.coordinates);
   }
 
   defaultMessage(args: ValidationArguments): string {
-    return "geom must be a valid GeoJSON MultiPolygon";
-  }
-
-  private isValidMultiPolygonCoordinates(coordinates: any[][][]): boolean {
-    if (!Array.isArray(coordinates) || coordinates.length === 0) return false;
-
-    for (const polygonCoords of coordinates) {
-      if (!this.isValidPolygonCoordinates(polygonCoords)) return false;
-    }
-    return true;
+    return "geom must be a valid GeoJSON Polygon";
   }
 
   private isValidPolygonCoordinates(polygonCoords: number[][][]): boolean {
@@ -79,14 +70,14 @@ export class IsMultiPolygonConstraint implements ValidatorConstraintInterface {
 }
 
 // Custom decorator
-export function IsMultiPolygon(validationOptions?: ValidationOptions) {
+export function IsPolygon(validationOptions?: ValidationOptions) {
   return function (object: object, propertyName: string) {
     registerDecorator({
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
       constraints: [],
-      validator: IsMultiPolygonConstraint,
+      validator: IsPolygonConstraint,
     });
   };
 }
@@ -142,8 +133,8 @@ export class LocationDto {
   is_geom_set?: boolean;
 
   @IsOptional()
-  @IsMultiPolygon()
-  geom?: MultiPolygon;
+  @IsPolygon()
+  geom?: Polygon;
 
   @IsArray()
   @ValidateNested({ each: true })
@@ -151,4 +142,3 @@ export class LocationDto {
   @IsOptional()
   pois?: PoiDto[];
 }
-

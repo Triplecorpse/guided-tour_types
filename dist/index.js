@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailVerificationReasonType = exports.ProfileEventType = exports.PaymentEventType = exports.ResourceNameType = exports.AppSettingsType = exports.PermissionType = exports.TranslationDto = exports.ResourceDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsMultiPolygonConstraint = exports.IsMultiPolygon = exports.LocationDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
+exports.EmailVerificationReasonType = exports.ProfileEventType = exports.PaymentEventType = exports.ResourceNameType = exports.AppSettingsType = exports.PermissionType = exports.TranslationDto = exports.ResourceDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsPolygonConstraint = exports.IsPolygon = exports.LocationDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
 // App Settings DTOs
 var app_setting_dto_1 = require("./dto/app-settings/app-setting.dto");
 Object.defineProperty(exports, "AppSettingDto", { enumerable: true, get: function () { return app_setting_dto_1.AppSettingDto; } });
@@ -21,8 +21,8 @@ Object.defineProperty(exports, "RefreshTokenDto", { enumerable: true, get: funct
 // Location DTOs
 var location_dto_1 = require("./dto/location/location.dto");
 Object.defineProperty(exports, "LocationDto", { enumerable: true, get: function () { return location_dto_1.LocationDto; } });
-Object.defineProperty(exports, "IsMultiPolygon", { enumerable: true, get: function () { return location_dto_1.IsMultiPolygon; } });
-Object.defineProperty(exports, "IsMultiPolygonConstraint", { enumerable: true, get: function () { return location_dto_1.IsMultiPolygonConstraint; } });
+Object.defineProperty(exports, "IsPolygon", { enumerable: true, get: function () { return location_dto_1.IsPolygon; } });
+Object.defineProperty(exports, "IsPolygonConstraint", { enumerable: true, get: function () { return location_dto_1.IsPolygonConstraint; } });
 var price_dto_1 = require("./dto/location/price.dto");
 Object.defineProperty(exports, "PriceDto", { enumerable: true, get: function () { return price_dto_1.PriceDto; } });
 var verify_session_input_dto_1 = require("./dto/location/verify-session-input.dto");

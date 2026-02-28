@@ -17,8 +17,8 @@ export { RefreshTokenDto } from "./dto/iam/refresh-token.dto";
 // Location DTOs
 export {
   LocationDto,
-  IsMultiPolygon,
-  IsMultiPolygonConstraint,
+  IsPolygon,
+  IsPolygonConstraint,
 } from "./dto/location/location.dto";
 export { PriceDto } from "./dto/location/price.dto";
 export { VerifySessionInputDto } from "./dto/location/verify-session-input.dto";

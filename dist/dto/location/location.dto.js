@@ -9,35 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocationDto = exports.IsMultiPolygonConstraint = void 0;
-exports.IsMultiPolygon = IsMultiPolygon;
+exports.LocationDto = exports.IsPolygonConstraint = void 0;
+exports.IsPolygon = IsPolygon;
 const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 const translation_dto_1 = require("../translation/translation.dto");
 const resource_dto_1 = require("../resource/resource.dto");
 const poi_dto_1 = require("../poi/poi.dto");
-// Custom constraint for validating GeoJSON MultiPolygon
-let IsMultiPolygonConstraint = class IsMultiPolygonConstraint {
+// Custom constraint for validating GeoJSON Polygon
+let IsPolygonConstraint = class IsPolygonConstraint {
     validate(geom, args) {
         if (!geom || typeof geom !== "object")
             return false;
-        // Check if it's a MultiPolygon
-        if (geom.type !== "MultiPolygon")
+        // Check if it's a Polygon
+        if (geom.type !== "Polygon")
             return false;
-        // Validate coordinates structure for MultiPolygon
-        return this.isValidMultiPolygonCoordinates(geom.coordinates);
+        // Validate coordinates structure for Polygon
+        return this.isValidPolygonCoordinates(geom.coordinates);
     }
     defaultMessage(args) {
-        return "geom must be a valid GeoJSON MultiPolygon";
-    }
-    isValidMultiPolygonCoordinates(coordinates) {
-        if (!Array.isArray(coordinates) || coordinates.length === 0)
-            return false;
-        for (const polygonCoords of coordinates) {
-            if (!this.isValidPolygonCoordinates(polygonCoords))
-                return false;
-        }
-        return true;
+        return "geom must be a valid GeoJSON Polygon";
     }
     isValidPolygonCoordinates(polygonCoords) {
         if (!Array.isArray(polygonCoords) || polygonCoords.length === 0)
@@ -68,19 +59,19 @@ let IsMultiPolygonConstraint = class IsMultiPolygonConstraint {
         return true;
     }
 };
-exports.IsMultiPolygonConstraint = IsMultiPolygonConstraint;
-exports.IsMultiPolygonConstraint = IsMultiPolygonConstraint = __decorate([
-    (0, class_validator_1.ValidatorConstraint)({ name: "isValidMultiPolygon", async: false })
-], IsMultiPolygonConstraint);
+exports.IsPolygonConstraint = IsPolygonConstraint;
+exports.IsPolygonConstraint = IsPolygonConstraint = __decorate([
+    (0, class_validator_1.ValidatorConstraint)({ name: "isValidPolygon", async: false })
+], IsPolygonConstraint);
 // Custom decorator
-function IsMultiPolygon(validationOptions) {
+function IsPolygon(validationOptions) {
     return function (object, propertyName) {
         (0, class_validator_1.registerDecorator)({
             target: object.constructor,
             propertyName: propertyName,
             options: validationOptions,
             constraints: [],
-            validator: IsMultiPolygonConstraint,
+            validator: IsPolygonConstraint,
         });
     };
 }
@@ -150,7 +141,7 @@ __decorate([
 ], LocationDto.prototype, "is_geom_set", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    IsMultiPolygon(),
+    IsPolygon(),
     __metadata("design:type", Object)
 ], LocationDto.prototype, "geom", void 0);
 __decorate([
