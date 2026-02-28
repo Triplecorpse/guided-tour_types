@@ -8,14 +8,17 @@ import {
 
 export class PriceDto {
   @IsNumber()
-  id: number;
+  @IsOptional()
+  id?: number;
 
   @IsNumber()
   @IsPositive()
-  amount: number;
+  @IsOptional()
+  amount?: number;
 
   @IsString()
-  currency: string;
+  @IsOptional()
+  currency?: string;
 
   @IsString()
   @IsOptional()
@@ -26,7 +29,8 @@ export class PriceDto {
   stripe_price_id?: string | null;
 
   @IsBoolean()
-  is_active: boolean;
+  @IsOptional()
+  is_active?: boolean;
 
   @IsString()
   @IsOptional()

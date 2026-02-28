@@ -16,15 +16,18 @@ class PriceDto {
 exports.PriceDto = PriceDto;
 __decorate([
     (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Number)
 ], PriceDto.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsPositive)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Number)
 ], PriceDto.prototype, "amount", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], PriceDto.prototype, "currency", void 0);
 __decorate([
@@ -39,6 +42,7 @@ __decorate([
 ], PriceDto.prototype, "stripe_price_id", void 0);
 __decorate([
     (0, class_validator_1.IsBoolean)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Boolean)
 ], PriceDto.prototype, "is_active", void 0);
 __decorate([
