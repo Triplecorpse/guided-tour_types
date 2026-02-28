@@ -88,7 +88,8 @@ export class LocationDto {
   id?: number;
 
   @IsNumber()
-  price: number;
+  @IsOptional()
+  price?: number;
 
   @IsArray()
   @IsOptional()

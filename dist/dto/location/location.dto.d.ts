@@ -13,7 +13,7 @@ export declare class IsPolygonConstraint implements ValidatorConstraintInterface
 export declare function IsPolygon(validationOptions?: ValidationOptions): (object: object, propertyName: string) => void;
 export declare class LocationDto {
     id?: number;
-    price: number;
+    price?: number;
     prices?: PriceDto[];
     is_published: boolean;
     is_purchased?: boolean;
