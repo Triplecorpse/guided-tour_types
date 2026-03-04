@@ -13,6 +13,9 @@ export { PaginationQueryDto } from "./dto/common/pagination-query.dto";
 
 // IAM DTOs
 export { RefreshTokenDto } from "./dto/iam/refresh-token.dto";
+export { OtpDto } from "./dto/iam/otp-dto";
+export { GoogleTokenDto } from "./dto/iam/google-token";
+export { InitiateAuthAttemptDto } from "./dto/iam/initiate-auth-attempt-dto";
 
 // Location DTOs
 export {
