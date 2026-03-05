@@ -1,5 +1,6 @@
 export { AppSettingDto } from "./dto/app-settings/app-setting.dto";
 export { AppSettingsDto } from "./dto/app-settings/app-settings.dto";
+export { ContactDto } from "./dto/auxiliary/contact.dto";
 export { CheckoutInputDto } from "./dto/checkout/checkout-input.dto";
 export { CollectionDto } from "./dto/collection/collection.dto";
 export { PaginationQueryDto } from "./dto/common/pagination-query.dto";
@@ -23,3 +24,4 @@ export { PaymentEventType } from "./enum/PaymentEventType";
 export { ProfileEventType } from "./enum/ProfileEventType";
 export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType";
 export { Filter, FilterValue } from "./generic/Filter";
+export { Sanitize, sanitizeString, sanitizeObject } from "./utils";

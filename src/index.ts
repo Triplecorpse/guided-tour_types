@@ -2,6 +2,9 @@
 export { AppSettingDto } from "./dto/app-settings/app-setting.dto";
 export { AppSettingsDto } from "./dto/app-settings/app-settings.dto";
 
+// Auxiliary DTOs
+export { ContactDto } from "./dto/auxiliary/contact.dto";
+
 // Checkout DTOs
 export { CheckoutInputDto } from "./dto/checkout/checkout-input.dto";
 
@@ -48,3 +51,7 @@ export { ProfileEventType } from "./enum/ProfileEventType";
 export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType";
 
 export { Filter, FilterValue } from "./generic/Filter";
+
+// Utils
+export { Sanitize, sanitizeString, sanitizeObject } from "./utils";
+

@@ -99,10 +99,42 @@ export class UserService {
 
 - ✅ **class-validator** decorators for validation
 - ✅ **class-transformer** decorators for transformation
+- ✅ **Input Sanitization** - Custom `@Sanitize()` decorator for XSS protection
 - ✅ **TypeScript** strict mode enabled
 - ✅ **GeoJSON** support for geographic data
 - ✅ Compiled to CommonJS (ES2020)
 - ✅ Full type declarations (.d.ts)
+
+## Security
+
+### Input Sanitization
+
+This package includes a custom `@Sanitize()` decorator to protect against XSS attacks:
+
+```typescript
+import { IsString } from 'class-validator';
+import { Sanitize } from 'guided-tour_types';
+
+export class ContactDto {
+  @IsString()
+  @Sanitize()  // Removes HTML tags, scripts, event handlers, etc.
+  message: string;
+}
+```
+
+**What gets sanitized:**
+- HTML/XML tags
+- Script tags and content
+- Event handlers (onclick, onerror, etc.)
+- JavaScript/data protocols
+- HTML entities (to prevent double-encoding)
+
+**Available utilities:**
+- `@Sanitize()` - Property decorator
+- `sanitizeString(input: string)` - Sanitize individual strings
+- `sanitizeObject<T>(obj: T)` - Recursively sanitize objects
+
+See [SANITIZATION.md](./SANITIZATION.md) for complete documentation and [SANITIZATION_QUICK_REFERENCE.md](./SANITIZATION_QUICK_REFERENCE.md) for quick reference.
 
 ## Development
 

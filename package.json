@@ -1,6 +1,6 @@
 {
   "name": "guided-tour_types",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Shared DTOs and types for guided-tour",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
