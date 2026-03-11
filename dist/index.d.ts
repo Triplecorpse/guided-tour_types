@@ -24,4 +24,5 @@ export { PaymentEventType } from "./enum/PaymentEventType";
 export { ProfileEventType } from "./enum/ProfileEventType";
 export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType";
 export { Filter, FilterValue } from "./generic/Filter";
+export { DeviceDto } from "./dto/device/device.dto";
 export { Sanitize, sanitizeString, sanitizeObject } from "./utils";

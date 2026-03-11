@@ -52,6 +52,9 @@ export { EmailVerificationReasonType } from "./enum/EmailVerificationReasonType"
 
 export { Filter, FilterValue } from "./generic/Filter";
 
+// Device DTOs
+export { DeviceDto } from "./dto/device/device.dto";
+
 // Utils
 export { Sanitize, sanitizeString, sanitizeObject } from "./utils";
 
