@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sanitizeObject = exports.sanitizeString = exports.Sanitize = exports.EmailVerificationReasonType = exports.ProfileEventType = exports.PaymentEventType = exports.ResourceNameType = exports.AppSettingsType = exports.PermissionType = exports.TranslationDto = exports.ResourceDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsPolygonConstraint = exports.IsPolygon = exports.LocationDto = exports.InitiateAuthAttemptDto = exports.GoogleTokenDto = exports.OtpDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.ContactDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
+exports.sanitizeObject = exports.sanitizeString = exports.Sanitize = exports.EmailVerificationReasonType = exports.ProfileEventType = exports.PaymentEventType = exports.ResourceNameType = exports.AppSettingsType = exports.PermissionType = exports.TranslationDto = exports.ResourceDto = exports.CheckUserResponseDto = exports.DeleteUserRequestDto = exports.UserDto = exports.AreaItem = exports.GetPoisDto = exports.PoiDto = exports.VerifySessionInputDto = exports.PriceDto = exports.IsPolygonConstraint = exports.IsPolygon = exports.LocationDto = exports.InitiateAuthAttemptDto = exports.GoogleTokenDto = exports.OtpDto = exports.RefreshTokenDto = exports.PaginationQueryDto = exports.CollectionDto = exports.CheckoutInputDto = exports.ContactDto = exports.AppSettingsDto = exports.AppSettingDto = void 0;
 // App Settings DTOs
 var app_setting_dto_1 = require("./dto/app-settings/app-setting.dto");
 Object.defineProperty(exports, "AppSettingDto", { enumerable: true, get: function () { return app_setting_dto_1.AppSettingDto; } });
@@ -47,6 +47,8 @@ var user_dto_1 = require("./dto/profile/user.dto");
 Object.defineProperty(exports, "UserDto", { enumerable: true, get: function () { return user_dto_1.UserDto; } });
 var delete_user_request_dto_1 = require("./dto/profile/delete-user-request.dto");
 Object.defineProperty(exports, "DeleteUserRequestDto", { enumerable: true, get: function () { return delete_user_request_dto_1.DeleteUserRequestDto; } });
+var check_user_response_dto_1 = require("./dto/profile/check-user-response.dto");
+Object.defineProperty(exports, "CheckUserResponseDto", { enumerable: true, get: function () { return check_user_response_dto_1.CheckUserResponseDto; } });
 // Resource DTOs
 var resource_dto_1 = require("./dto/resource/resource.dto");
 Object.defineProperty(exports, "ResourceDto", { enumerable: true, get: function () { return resource_dto_1.ResourceDto; } });

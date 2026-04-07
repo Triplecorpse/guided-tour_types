@@ -15,6 +15,7 @@ export { PoiDto } from "./dto/poi/poi.dto";
 export { GetPoisDto, AreaItem } from "./dto/poi/get-pois.dto";
 export { UserDto } from "./dto/profile/user.dto";
 export { DeleteUserRequestDto } from "./dto/profile/delete-user-request.dto";
+export { CheckUserResponseDto } from "./dto/profile/check-user-response.dto";
 export { ResourceDto } from "./dto/resource/resource.dto";
 export { TranslationDto } from "./dto/translation/translation.dto";
 export { PermissionType } from "./enum/PermissionType";

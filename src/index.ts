@@ -36,6 +36,7 @@ export { GetPoisDto, AreaItem } from "./dto/poi/get-pois.dto";
 // Profile DTOs
 export { UserDto } from "./dto/profile/user.dto";
 export { DeleteUserRequestDto } from "./dto/profile/delete-user-request.dto";
+export { CheckUserResponseDto } from "./dto/profile/check-user-response.dto"
 
 // Resource DTOs
 export { ResourceDto } from "./dto/resource/resource.dto";
