@@ -10,4 +10,6 @@ export interface DeviceDto {
     providerName?: string;
     timestamp?: string;
     location?: string;
+    loginMethod?: string;
+    isThis?: boolean;
 }
